@@ -44,12 +44,7 @@ function friendlyDuration(duration: number) {
   return `${Math.ceil(duration / ONE_HOUR)} hours`;
 }
 
-export default defineEventHandler(async (event) => {
-  if (event.method === "OPTIONS") {
-    event.node.res.statusCode = 204;
-    event.node.res.statusMessage = "No Content.";
-    return "OK";
-  }
+export default defineEventHandler(async () => {
   const entry = await toggl.timeEntry.current();
 
   const activity = entry
