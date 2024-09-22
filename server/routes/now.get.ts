@@ -49,7 +49,7 @@ export default defineEventHandler(async () => {
 
   const activity = entry
     ? `${entry.tags[0] ?? getRandomActivity()}`
-    : "doing something in secret";
+    : "somewhere out there, doing something";
 
   const duration = entry
     ? `, and I've been at it for about ${friendlyDuration(
@@ -66,6 +66,6 @@ export default defineEventHandler(async () => {
     : "";
 
   return {
-    line: `Right now, I am ${activity}${song}${duration}.`,
+    line: `Right now, I'm ${activity}${song}${duration}.`,
   };
 });
